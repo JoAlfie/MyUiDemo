@@ -25,7 +25,7 @@
       "lint-fix": "npm run lint --fix --quiet",
       "stylelint": "stylelint \"src/**/*.css\" \"public/**/*.css\"  \"**/*.scss\" \"**/*.vue\"",
       "stylelint-fix": "stylelint \"src/**/*.css\" \"public/**/*.css\" \"**/*.scss\" \"**/*.vue\" --fix",
-      "chromatic": "npx chromatic --project-token=chpt_3cb5c35dce9a47f",
+      "chromatic": "npx chromatic --project-token=chpt_7e01c73075e84db",
       "format": "npm run tscheck && npm run prettier && npm run lint && npm run stylelint",
       "format-fix": "npm run tscheck && npm run prettier-fix && npm run lint-fix && npm run stylelint-fix"
    },
