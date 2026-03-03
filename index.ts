@@ -1,3 +1,3 @@
-import * as SanoUi from "./src";
+import * as MyUi from "./src";
 
-export default SanoUi;
+export default MyUi;

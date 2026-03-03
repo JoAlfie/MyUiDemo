@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import { ref } from "vue";
 import UiDraggable from "./UiDraggable.vue";
-import UiIcon from "../UiIcon/UiIcon.vue";
+import SnIcon from "../UiIcon/UiIcon.vue";
 
 const meta: Meta<typeof UiDraggable> = {
    title: "UI/UiDraggable",
@@ -112,7 +112,7 @@ export const WithSlotContent: Story = {
 export const WithCustomDragHandle: Story = {
    args: {},
    render: (args) => ({
-      components: { UiDraggable, UiIcon },
+      components: { UiDraggable, SnIcon },
       setup() {
          return { args };
       },
@@ -124,7 +124,7 @@ export const WithCustomDragHandle: Story = {
                v-bind="args"
             >
                <template #drag-handle>
-                  <UiIcon name="atom" />
+                  <SnIcon name="atom" />
                </template>
             </UiDraggable>
          </div>
