@@ -1,0 +1,128 @@
+/**
+Form controls
+ */
+
+:root {
+   // margin between label and form input
+   --label-spacing: var(--size-base-6);
+
+   /*
+  * @tokens Colours: Selects
+  * @presenter Color
+  */
+   --selects-light-background: var(--colour-brand-background-light); // backgrounds
+   --selects-primary: var(--colour-brand-default); // primary colour for checkbox or active state
+   --selects-primary-background: color-mix(
+      in srgb,
+      var(--colour-brand-default),
+      white 95%
+   ); // active trigger select background
+
+   --selects-accessible-gray: var(--grey-80); // gray for text
+   --selects-border: var(--colour-border-base); // border colour
+   --selects-border-hover: var(--grey-40); // border colour
+   --selects-border-active: var(--grey-50); // border colour
+}
+
+.form-control-wrapper {
+   position: relative;
+   display: inline-block;
+   width: 100%;
+
+   .icon.form-control-icon {
+      position: absolute;
+      right: var(--size-base-12);
+      bottom: var(--size-base-12);
+      color: var(--grey-50);
+   }
+
+   .icon.search-icon {
+      position: absolute;
+      bottom: var(--size-base-12);
+      left: var(--size-base-12);
+      color: var(--black);
+   }
+}
+
+// Styles for 'standard' input types
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
+textarea,
+div[contenteditable] {
+   &.form-control {
+      width: 100%;
+      height: var(--size-base-40);
+      padding: 0 var(--size-base-12);
+      font-family: var(--base-font-family);
+      font-size: var(--size-text-small);
+      color: var(--grey-80);
+      outline: none;
+      background-color: var(--colour-background-base);
+      border: 1px solid var(--colour-border-base);
+      border-radius: var(--border-radius-8);
+      transition: border-color 0.2s;
+
+      &:disabled,
+      &.disabled {
+         color: var(--grey-50);
+         cursor: not-allowed;
+         background-color: var(--colour-background-accent);
+         border-color: var(--colour-border-base);
+      }
+
+      // we dont need spacing between the input and the label if there is no label
+      &.has-label {
+         margin-block-start: var(--label-spacing);
+      }
+
+      &.has-icon {
+         padding-right: var(--size-base-36);
+      }
+
+      &:not(:disabled, .disabled) {
+         &:focus,
+         &:active,
+         &:hover {
+            border-color: var(--focus);
+         }
+      }
+
+      &.red-border-error {
+         border-color: var(--colour-danger-hover) !important;
+      }
+   }
+}
+
+textarea.form-control {
+   height: auto;
+   min-height: var(--size-base-40);
+   padding: var(--size-base-12);
+}
+
+div[contenteditable].form-control {
+   height: auto;
+   min-height: var(--size-base-40);
+   padding: var(--size-base-8) var(--size-base-12);
+}
+
+// We need to override the form-control padding for these elements
+select.form-control {
+   padding-right: var(--size-base-40); // Add extra space for dropdown arrow
+   padding-left: var(--size-base-16);
+   appearance: none;
+}
+
+input[type="search"].form-control {
+   padding-left: var(--size-base-36); // Add extra space for search icon
+}

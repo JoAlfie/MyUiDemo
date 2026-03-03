@@ -1,0 +1,20 @@
+@use "./breakpoints" as *;
+
+.sn-container {
+   padding-inline: var(--size-base-20);
+   margin-inline: auto;
+   container-type: inline-size;
+   container-name: container;
+
+   @include above($breakpoint-medium) {
+      max-width: $breakpoint-medium;
+   }
+
+   @include above($breakpoint-large) {
+      max-width: $breakpoint-large;
+   }
+
+   @include above($breakpoint-xlarge) {
+      max-width: $breakpoint-xlarge;
+   }
+}

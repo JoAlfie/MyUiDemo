@@ -1,0 +1,54 @@
+@forward "buttons.sizes";
+@forward "buttons.tokens";
+@forward "buttons.themes";
+
+.button {
+   // padding and gap is handled in buttons.sizes
+   // colour variables are set in buttons.themes
+
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   font-family: var(--base-font-family);
+   font-size: var(--component-button-text);
+   font-weight: var(--weight-base);
+   color: var(--button-text-colour);
+   white-space: nowrap;
+   cursor: pointer;
+   outline: 0;
+   background-color: var(--button-background-colour);
+   border: solid var(--border-width-base) var(--button-border-colour);
+   border-radius: var(--border-radius-6);
+
+   &:not(.loading, :disabled, .disabled):hover {
+      color: var(--button-text-colour-hover, var(--button-text-colour));
+      background-color: var(--button-background-colour-hover);
+   }
+
+   &:not(.loading, :disabled, .disabled):active {
+      color: var(--button-text-colour-active, var(--button-text-colour));
+      background-color: var(--button-background-colour-active);
+   }
+
+   &:disabled,
+   &.disabled {
+      cursor: not-allowed;
+   }
+
+   &.rounded-full {
+      border-radius: var(--border-radius-full);
+   }
+
+   &:disabled {
+      cursor: not-allowed;
+   }
+}
+
+a.button {
+   text-decoration: none;
+   cursor: pointer;
+
+   &.disabled:active {
+      pointer-events: none;
+   }
+}

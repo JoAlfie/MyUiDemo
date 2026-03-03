@@ -1,0 +1,86 @@
+import { Canvas, Meta, Story } from "@storybook/blocks";
+
+import * as ToasterStories from "./UiNotificationToaster.stories";
+import * as ToastStories from "./UiNotificationToast.stories";
+import { defaultTimeout } from "../../stores/toasts/toastStore";
+
+<Meta title="UI/Toasts/Toasts" />
+
+# Toast Notifications
+
+The `<NotificationToaster />` lives in the base `App.vue`, and only needs to exist once. It is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API" target="\_blank" style={{color: "#029CFD"}}>popover</a> holder for toast notifications.
+
+Toasts are stored in the `toastStore` which can be called from anywhere in the application.
+
+<a href="?path=/story/ui-toasts-notificationtoaster--toaster" target="\_blank">
+   {/* span to style the link and stop markdown making it a paragraph */}
+   <span style={{ color: "#029CFD" }}>See the toaster in action</span>
+</a>
+
+## Usage
+
+```
+import { useToastStore } from '@sano-ui-library/src';
+
+const toast = useToastStore();
+```
+
+### Info
+
+```
+toast.info("Notification toast");
+```
+
+<Story of={ToastStories.Info} />
+
+### Success
+
+```
+toast.success("Notification toast");
+```
+
+<Story of={ToastStories.Success} />
+
+### Error
+
+```
+toast.error("Notification toast");
+```
+
+<Story of={ToastStories.Error} />
+
+### Warning
+
+```
+toast.warning("Notification toast");
+```
+
+<Story of={ToastStories.Warning} />
+<br />
+
+## Options
+
+The toast functions take an optional `options` parameter.
+
+<table>
+   <thead>
+      <tr>
+         <th>Option</th>
+         <th>Description</th>
+         <th>Type</th>
+         <th>Default</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>timeout</td>
+         <td>duration toast is displayed, in ms</td>
+         <td>`number`</td>
+         <td>{defaultTimeout}</td>
+      </tr>
+   </tbody>
+</table>
+
+```
+toast.info("Text content", { timeout: 7000 });
+```

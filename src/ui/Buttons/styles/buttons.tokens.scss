@@ -1,0 +1,36 @@
+// all of these are overrideable in theme.css files using token-*
+// e.g. --token-button-padding will override --component-button-padding
+.button {
+   // sizing
+   --component-button-min-height: var(--token-button-min-height, var(--size-base-32));
+   --component-button-md-min-height: var(--token-button-md-min-height, var(--size-base-40));
+   --component-button-lg-min-height: var(--token-button-lg-min-height, var(--size-base-46));
+
+   // padding & spacing
+
+   /* Padding */
+   --component-button-padding: var(--token-button-padding, var(--size-base-4) var(--size-base-8));
+   --component-button-md-padding: var(--token-button-md-padding, var(--size-base-6) var(--size-base-16));
+   --component-button-lg-padding: var(--token-button-lg-padding, var(--size-base-12) var(--size-base-24));
+   --component-button-gap: var(--token-button-gap, var(--size-base-4));
+   --component-button-md-gap: var(--token-button-md-gap, var(--size-base-8));
+   --component-button-lg-gap: var(--token-button-lg-gap, var(--size-base-8));
+
+   // border radius
+   --component-button-radius: var(--token-button-radius, var(--border-radius-4));
+   --component-button-md-radius: var(--token-button-md-radius, var(--border-radius-8));
+   --component-button-lg-radius: var(--token-button-lg-radius, var(--border-radius-8));
+
+   // text
+   --component-button-text: var(--token-button-text, var(--size-text-base));
+   --component-button-md-text: var(--token-button-md-text, var(--size-text-base));
+   --component-button-lg-text: var(--token-button-lg-text, var(--size-text-base));
+
+   // colours
+   --component-button-outline-border-brand: var(--token-button-outline-border-brand, var(--colour-brand-default));
+   --component-button-outline-border-info: var(--token-button-outline-border-info, var(--colour-info-default));
+   --component-button-outline-border-danger: var(--token-button-outline-border-danger, var(--colour-danger-default));
+   --component-button-outline-border-success: var(--token-button-outline-border-success, var(--colour-success-default));
+   --component-button-outline-border-neutral: var(--token-button-outline-border-neutral, var(--black));
+   --component-button-outline-border-grey: var(--token-button-outline-border-grey, var(--colour-grey-hover));
+}

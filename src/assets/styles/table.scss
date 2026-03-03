@@ -1,0 +1,14 @@
+:root {
+   --table-header-padding-regular: var(--size-base-20);
+   --table-inner-background: var(--colour-background-base);
+   --table-outer-border: solid var(--border-width-base) var(--colour-border-accent);
+   --table-row-border: solid var(--border-width-base) var(--colour-border-light);
+   --table-row-highlight: var(--grey-5);
+   --table-border-radius: var(--border-radius-base);
+   --table-header-font-size: var(--size-text-small);
+   --table-header-font-weight: var(--weight-bold);
+   --table-header-background: var(--colour-background-accent);
+   --table-header-color: var(--colour-text-accent);
+   --table-cell-padding-regular: var(--size-base-20);
+   --table-cell-font-size: var(--size-text-base);
+}

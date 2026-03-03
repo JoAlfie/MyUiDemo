@@ -1,0 +1,93 @@
+:root {
+   /*
+   * @tokens Colour Tokens: Base
+   * @presenter Color
+   */
+   // base
+   --colour-text-base: var(--black);
+   --colour-text-accent: var(--grey-70);
+   --colour-text-foreground: var(--white);
+   --colour-background-base: var(--white);
+   --colour-background-accent: var(--grey-10);
+   --colour-border-base: var(--grey-30);
+   --colour-border-accent: var(--grey-20);
+   --colour-border-light: var(--grey-10);
+
+   /*
+   * @tokens Colour Tokens: Brand
+   * @presenter Color
+   */
+   --colour-brand-text: var(--blue-100);
+   --colour-brand-background: var(--blue-20);
+   --colour-brand-default: var(--blue-80);
+   --colour-brand-hover: var(--blue-90);
+   --colour-brand-active: var(--blue-100);
+   --colour-page-background: var(--white);
+
+   /*
+   * @tokens Colour Tokens: Info
+   * @presenter Color
+   */
+   --colour-info-text: var(--blue-100);
+   --colour-info-background: var(--blue-20);
+   --colour-info-default: var(--blue-80);
+   --colour-info-hover: var(--blue-90);
+   --colour-info-active: var(--blue-100);
+
+   /*
+   * @tokens Colour Tokens: Danger
+   * @presenter Color
+   */
+   --colour-danger-text: var(--red-100);
+   --colour-danger-background: var(--red-20);
+   --colour-danger-default: var(--red-80);
+   --colour-danger-hover: var(--red-90);
+   --colour-danger-active: var(--red-100);
+
+   /*
+   * @tokens Colour Tokens: Warning
+   * @presenter Color
+   */
+   --colour-warning-text: var(--yellow-100);
+   --colour-warning-background: var(--yellow-20);
+   --colour-warning-default: var(--yellow-80);
+   --colour-warning-hover: var(--yellow-90);
+   --colour-warning-active: var(--yellow-100);
+
+   /*
+   * @tokens Colour Tokens: Success
+   * @presenter Color
+   */
+   --colour-success-text: var(--green-100);
+   --colour-success-background: var(--green-10);
+   --colour-success-default: var(--green-70);
+   --colour-success-hover: var(--green-80);
+   --colour-success-active: var(--green-90);
+
+   /**
+   * @tokens Colour Tokens: Grey
+   * @presenter Color
+   */
+   --colour-grey-text: var(--black);
+   --colour-grey-background: var(--grey-10);
+   --colour-grey-default: var(--grey-10);
+   --colour-grey-hover: var(--grey-20);
+   --colour-grey-active: var(--grey-30);
+
+   /*
+    * @tokens Colour Tokens: Disabled @todo - update IN NEXT PR
+    * @presenter Color
+    */
+   //  --colour-disabled-text: var(--blue-100);
+   //  --colour-disabled-background: var(--grey-40);
+   //  --colour-disabled-default: var(--colour-disabled-background);
+   //  --colour-disabled-hover: var(--colour-disabled-background);
+   //  --colour-disabled-active: var(--colour-disabled-background);
+
+   /*
+   * @tokens Colour Tokens: Focus
+   * @presenter Color
+   */
+   --focus: #0f62fe;
+   --focus-inverse: #dbdee0;
+}

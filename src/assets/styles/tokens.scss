@@ -1,0 +1,58 @@
+:root {
+   /*
+   * @tokens Font Family
+   * @presenter FontFamily
+   */
+   --base-font-family: helvicaneue, helvetica, sans-serif;
+   --header-font-family: helvicaneue, helvetica, sans-serif;
+
+   /*
+   * @tokens Font Size
+   * @presenter FontSize
+   */
+   --size-text-base: 1rem; // 16px
+   --size-text-small: 0.938rem; // 15px
+   --size-heading-1: clamp(1.5rem, 2.5vw, 2rem); // dynamic font size of 2.5 viewport width - max 1.5rem and min 2rem
+   --size-heading-2: 1.5rem; // 24px
+   --size-heading-3: 1.125rem; // 18px
+
+   /*
+   * @tokens Font Weight
+   * @presenter FontWeight
+   */
+   --weight-base: 400;
+   --weight-light: 300;
+   --weight-semibold: 500;
+   --weight-bold: 700;
+
+   /*
+   * @tokens Layout Spacing
+   * @presenter Spacing
+   */
+   --spacing-section: var(--size-base-32);
+   --spacing-section-elements: var(--size-base-24);
+
+   /*
+   * @tokens Border
+   */
+   --border-width-base: 1px; /* @presenter Spacing */
+   --border-radius-base: var(--border-radius-4); /* @presenter BorderRadius */
+   --border-radius-4: var(--size-base-4); /* @presenter BorderRadius */
+   --border-radius-6: var(--size-base-6); /* @presenter BorderRadius */
+   --border-radius-8: var(--size-base-8); /* @presenter BorderRadius */
+   --border-radius-16: var(--size-base-16); /* @presenter BorderRadius */
+   --border-radius-full: 100px; /* @presenter BorderRadius */
+
+   /*
+   * @tokens Shadows
+   * @presenter Shadow
+   */
+   --box-shadow-base: -1px 4px 13.5px 0px rgb(3 0 62 / 11%);
+   --box-shadow-soft: 0px 2px 10px 0px rgb(0 0 0 / 10%);
+
+   /**
+   * @tokens Easing
+   * @presenter Easing
+   */
+   --easing-base: cubic-bezier(0.55, 0, 0.1, 1);
+}

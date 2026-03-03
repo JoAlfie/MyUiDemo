@@ -1,0 +1,69 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Design Token Styling" />
+
+# Design Token Styling
+
+Design tokens provide a layer of abstraction over the base variables, mostly the colours, to make it easier to provide consistency across the project. For example, rather than having to remember which shade of a colour is generally used for text, a clearly named variable is provided which will always be a visually appealing and suitably accessible contrast against the provided background colour variable.
+
+This also futureproofs the project for theming - e.g. to introduce a dark mode, the css variables could be changed at a high level (using a prefers-color-scheme media query in the tokens file) and this would cascade through the whole project, meaning indivudal components do not need to be adjusted.
+
+New tokens can be added at any point, where a variable needs to be reused for a certain purpose.
+The criteria for creating a token should be where:
+
+- A new value is being added that will be used in multiple places (e.g. a new box shadow style)
+- A base colour variable would be used otherwise (we want to always have a layer of abstraction over these variables for themeing purposes)
+- An existing token could be used but the context is different (i.e. the name would be confusing, or it may be replaced with a different colour in a different theme)
+
+## Layer one: base variables
+
+Variables hold the raw values, e.g. a hex colour code. They are clearly named, but not specific to their use. Variables should ideally not be used in styling code.
+
+```css
+--black: #000;
+```
+
+## Layer two: design tokens
+
+The design tokens provide a specific, reusable use case, with either a raw value or base variable assigned to it. An update to this value will easily propogate through the whole application, ensuring consistency through the UI.
+
+```css
+--text-colour: var(--black);
+--focus-colour: #0f62fe;
+```
+
+## Layer three: component variables
+
+Component variables should exist inside the styling block of the Vue component they are related to. Where a component may have multiple themes, using variables for styling allows for:
+
+- Separation of main styling from theming
+- Ease of creating new themes
+- Follow through of higher level themeing, e.g. a dark mode
+
+```css
+.button {
+   display: inline-flex;
+   align-items: center;
+   colour: var(--button-text-colour);
+   background: var(--button-background-colour);
+
+   .primary {
+      --button-text-colour: var(--colour-primary-foreground);
+      --button-background-colour: var(--colour-primary-background);
+
+      .danger {
+         --button-background-colour: var(--colour-danger-background);
+      }
+   }
+}
+
+// In a higher level .scss file
+--colour-primary-foreground: var(--colour-primary-light);
+--colour-primary-background: var(--colour-primary-light-background);
+
+@media (prefers-color-scheme: dark) {
+   --colour-primary-foreground: var(--colour-primary-dark);
+   --colour-primary-background: var(--colour-primary-dark-background);
+}
+
+```

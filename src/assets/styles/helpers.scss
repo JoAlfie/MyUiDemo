@@ -1,0 +1,15 @@
+@use "./mixins";
+
+/* two layers of focus, white shadow and blue outline, to meet different contrast requirements
+on browsers that support 'focus-visible', apply focus styling only to keyboard interactions. */
+:focus-visible {
+   @include mixins.focus-outline;
+}
+
+.show-focus-within:focus-within {
+   @include mixins.focus-outline;
+}
+
+.visually-hidden {
+   @include mixins.visually-hidden;
+}

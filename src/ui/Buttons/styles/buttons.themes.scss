@@ -1,0 +1,261 @@
+.button {
+   &.filled {
+      --button-text-colour: var(--colour-text-foreground);
+
+      &.brand {
+         --button-border-colour: var(--colour-brand-default);
+         --button-background-colour: var(--colour-brand-default);
+         --button-background-colour-hover: var(--colour-brand-hover);
+         --button-background-colour-active: var(--colour-brand-active);
+      }
+
+      &.info {
+         --button-border-colour: var(--colour-info-default);
+         --button-background-colour: var(--colour-info-default);
+         --button-background-colour-hover: var(--colour-info-hover);
+         --button-background-colour-active: var(--colour-info-active);
+      }
+
+      &.danger {
+         --button-border-colour: var(--colour-danger-default);
+         --button-background-colour: var(--colour-danger-default);
+         --button-background-colour-hover: var(--colour-danger-hover);
+         --button-background-colour-active: var(--colour-danger-active);
+      }
+
+      &.success {
+         --button-border-colour: var(--colour-success-default);
+         --button-background-colour: var(--colour-success-default);
+         --button-background-colour-hover: var(--colour-success-hover);
+         --button-background-colour-active: var(--colour-success-active);
+      }
+
+      &.neutral {
+         --button-text-colour: var(--black);
+         --button-border-colour: var(--white);
+         --button-background-colour: var(--white);
+         --button-background-colour-hover: var(--grey-10);
+         --button-background-colour-active: var(--grey-20);
+      }
+
+      &.grey {
+         --button-text-colour: var(--colour-grey-text);
+         --button-border-colour: var(--colour-grey-default);
+         --button-background-colour: var(--colour-grey-default);
+         --button-background-colour-hover: var(--colour-grey-hover);
+         --button-background-colour-active: var(--colour-grey-active);
+      }
+
+      &:disabled,
+      &.disabled {
+         color: color-mix(in srgb, var(--button-text-colour) 90%, white);
+         text-shadow: 0 1px 1px color-mix(in srgb, var(--button-background-colour) 90%, black);
+         background-color: color-mix(in srgb, var(--button-background-colour) 80%, white);
+         border-color: color-mix(in srgb, var(--button-border-colour) 80%, white);
+      }
+
+      /** handle disabled state for neutral and grey as these are naturally lighter colours */
+      &.neutral:disabled,
+      &.neutral.disabled,
+      &.grey:disabled,
+      &.grey.disabled {
+         text-shadow: 0 1px 1px var(--button-background-colour);
+         background-color: color-mix(in srgb, var(--button-background-colour) 80%, transparent);
+         border-color: color-mix(in srgb, var(--button-border-colour) 25%, transparent);
+      }
+   }
+
+   &.transparent {
+      &.brand {
+         --button-text-colour: var(--colour-brand-default);
+         --button-text-colour-hover: var(--colour-text-foreground);
+         --button-background-colour-hover: var(--colour-brand-hover);
+         --button-background-colour-active: var(--colour-brand-active);
+      }
+
+      &.info {
+         --button-text-colour: var(--colour-info-default);
+         --button-text-colour-hover: var(--colour-text-foreground);
+         --button-background-colour-hover: var(--colour-info-hover);
+         --button-background-colour-active: var(--colour-info-active);
+      }
+
+      &.danger {
+         --button-text-colour: var(--colour-danger-default);
+         --button-text-colour-hover: var(--colour-text-foreground);
+         --button-background-colour-hover: var(--colour-danger-hover);
+         --button-background-colour-active: var(--colour-danger-active);
+      }
+
+      &.success {
+         --button-text-colour: var(--colour-success-default);
+         --button-text-colour-hover: var(--colour-text-foreground);
+         --button-background-colour-hover: var(--colour-success-hover);
+         --button-background-colour-active: var(--colour-success-active);
+      }
+
+      &.neutral {
+         --button-text-colour: var(--white);
+         --button-text-colour-hover: var(--colour-grey-text);
+         --button-background-colour-hover: var(--grey-10);
+         --button-background-colour-active: var(--grey-20);
+      }
+
+      &.grey {
+         --button-text-colour: var(--colour-grey-text);
+         --button-background-colour-hover: var(--colour-grey-hover);
+         --button-background-colour-active: var(--colour-grey-active);
+      }
+   }
+
+   &.outline,
+   &.outline-white {
+      --button-text-colour-hover: var(--colour-text-foreground);
+      --button-text-colour-active: var(--colour-text-foreground);
+
+      &.brand {
+         --button-border-colour: var(--component-button-outline-border-brand);
+         --button-text-colour: var(--colour-brand-default);
+         --button-background-colour-hover: var(--colour-brand-hover);
+         --button-background-colour-active: var(--colour-brand-active);
+      }
+
+      &.info {
+         --button-border-colour: var(--component-button-outline-border-info);
+         --button-text-colour: var(--colour-info-default);
+         --button-background-colour-hover: var(--colour-info-hover);
+         --button-background-colour-active: var(--colour-info-active);
+      }
+
+      &.danger {
+         --button-border-colour: var(--component-button-outline-border-danger);
+         --button-text-colour: var(--colour-danger-default);
+         --button-background-colour-hover: var(--colour-danger-hover);
+         --button-background-colour-active: var(--colour-danger-active);
+      }
+
+      &.success {
+         --button-border-colour: var(--component-button-outline-border-success);
+         --button-text-colour: var(--colour-success-default);
+         --button-background-colour-hover: var(--colour-success-hover);
+         --button-background-colour-active: var(--colour-success-active);
+      }
+
+      &.grey {
+         --button-border-colour: var(--component-button-outline-border-grey);
+         --button-text-colour: var(--colour-grey-text);
+         --button-text-colour-hover: var(--colour-grey-text);
+         --button-text-colour-active: var(--colour-grey-text);
+         --button-background-colour-hover: var(--colour-grey-hover);
+         --button-background-colour-active: var(--colour-grey-active);
+      }
+
+      &:disabled,
+      &.disabled {
+         color: color-mix(in srgb, var(--button-text-colour) 65%, white);
+         border-color: color-mix(in srgb, var(--button-border-colour) 60%, white);
+      }
+   }
+
+   &.outline {
+      --button-background-colour: transparent;
+
+      &.neutral {
+         --button-text-colour: var(--white);
+         --button-border-colour: var(--white);
+         --button-background-colour-hover: var(--grey-10);
+         --button-background-colour-active: var(--grey-20);
+         --button-text-colour-hover: var(--black);
+         --button-text-colour-active: var(--black);
+      }
+
+      /** handle disabled state for neutral as it has naturally lighter colours */
+      &.neutral:disabled {
+         color: color-mix(in srgb, var(--button-text-colour) 75%, transparent);
+         border-color: color-mix(in srgb, var(--button-border-colour) 75%, transparent);
+      }
+   }
+
+   &.outline-white {
+      --button-background-colour: var(--white);
+
+      &.neutral {
+         --button-text-colour: var(--black);
+         --button-border-colour: var(--component-button-outline-border-neutral);
+         --button-background-colour-hover: var(--grey-10);
+         --button-background-colour-active: var(--grey-20);
+         --button-text-colour-hover: var(--black);
+         --button-text-colour-active: var(--black);
+      }
+   }
+
+   &.outline-filled {
+      &.brand {
+         --button-border-colour: var(--colour-brand-default);
+         --button-text-colour: var(--colour-brand-default);
+         --button-text-colour-hover: var(--colour-brand-default);
+         --button-text-colour-active: var(--colour-brand-default);
+         --button-background-colour: color-mix(in srgb, var(--colour-brand-default), white 95%);
+         --button-background-colour-hover: color-mix(in srgb, var(--colour-brand-default), white 90%);
+         --button-background-colour-active: color-mix(in srgb, var(--colour-brand-default), white 85%);
+      }
+
+      &.info {
+         --button-border-colour: var(--colour-info-default);
+         --button-text-colour: var(--colour-info-default);
+         --button-text-colour-hover: var(--colour-info-default);
+         --button-text-colour-active: var(--colour-info-default);
+         --button-background-colour: color-mix(in srgb, var(--colour-info-default), white 95%);
+         --button-background-colour-hover: color-mix(in srgb, var(--colour-info-default), white 90%);
+         --button-background-colour-active: color-mix(in srgb, var(--colour-info-default), white 85%);
+      }
+
+      &.danger {
+         --button-border-colour: var(--colour-danger-default);
+         --button-text-colour: var(--colour-danger-default);
+         --button-text-colour-hover: var(--colour-danger-default);
+         --button-text-colour-active: var(--colour-danger-default);
+         --button-background-colour: color-mix(in srgb, var(--colour-danger-default), white 95%);
+         --button-background-colour-hover: color-mix(in srgb, var(--colour-danger-default), white 90%);
+         --button-background-colour-active: color-mix(in srgb, var(--colour-danger-default), white 85%);
+      }
+
+      &.success {
+         --button-border-colour: var(--colour-success-default);
+         --button-text-colour: var(--colour-success-default);
+         --button-text-colour-hover: var(--colour-success-default);
+         --button-text-colour-active: var(--colour-success-default);
+         --button-background-colour: color-mix(in srgb, var(--colour-success-default), white 95%);
+         --button-background-colour-hover: color-mix(in srgb, var(--colour-success-default), white 90%);
+         --button-background-colour-active: color-mix(in srgb, var(--colour-success-default), white 85%);
+      }
+
+      &.grey {
+         --button-text-colour: var(--colour-grey-text);
+         --button-border-colour: var(--grey-30);
+         --button-background-colour: color-mix(in srgb, var(--grey-30), white 70%);
+         --button-text-colour-hover: var(--colour-grey-text);
+         --button-text-colour-active: var(--colour-grey-text);
+         --button-background-colour-hover: color-mix(in srgb, var(--grey-30), white 60%);
+         --button-background-colour-active: color-mix(in srgb, var(--grey-30), white 50%);
+      }
+
+      &:disabled,
+      &.disabled {
+         color: color-mix(in srgb, var(--button-text-colour) 70%, white);
+         background-color: color-mix(in srgb, var(--button-background-colour) 80%, white);
+         border-color: color-mix(in srgb, var(--button-border-colour) 60%, white);
+      }
+   }
+
+   &.text {
+      --button-text-colour: var(--colour-text-accent);
+      --button-border-colour: none;
+      --button-background-colour: transparent;
+      --button-text-colour-hover: var(--colour-text-base);
+      --button-text-colour-active: var(--colour-text-base);
+
+      font-size: inherit;
+      text-decoration: underline;
+   }
+}

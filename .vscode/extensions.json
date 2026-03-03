@@ -1,0 +1,14 @@
+{
+   "recommendations": [
+      "Vue.volar", // language support extension built for Vue - https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar
+      "dariofuzinato.vue-peek", // peek at vue files without opening them - https://marketplace.visualstudio.com/items?itemName=dariofuzinato.vue-peek
+      "dbaeumer.vscode-eslint", // eslint - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+      "esbenp.prettier-vscode", // prettier - https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+      "sdras.vue-vscode-snippets", // https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets
+      "mrmlnc.vscode-duplicate", // right click and duplicate files - https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-duplicate
+      "shardulm94.trailing-spaces", // highlight trailing spaces - https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces
+      "gruntfuggly.todo-tree", // todo tree - https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
+      "deque-systems.vscode-axe-linter", // Highlights accessibility issues in code - https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter
+      "stylelint.vscode-stylelint" // css linting - https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
+   ]
+}

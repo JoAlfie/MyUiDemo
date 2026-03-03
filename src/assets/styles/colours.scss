@@ -1,0 +1,161 @@
+:root {
+   /*
+   * @tokens Colours: Core
+   * @presenter Color
+   */
+   --white: #fff;
+   --black: #1c2b33;
+
+   /*
+   * @tokens Colours: Neutral
+   * @presenter Color
+   */
+   --grey-5: #f9f9f9;
+   --grey-10: #f3f4f6;
+   --grey-20: #dbdee0;
+   --grey-30: #c3c7cb;
+   --grey-40: #abb1b5;
+   --grey-50: #939b9f;
+   --grey-60: #7c848a;
+   --grey-70: #646e74;
+   --grey-80: #4c585e;
+   --grey-90: #344149;
+
+   /*
+   * @tokens Colours: Blue
+   * @presenter Color
+   */
+   --blue-10: #eefafd;
+   --blue-20: #c4ebf5;
+   --blue-30: #b0e2f1;
+   --blue-40: #7acce6;
+   --blue-50: #3caed4;
+   --blue-60: #2191b9;
+   --blue-70: #1e749c;
+   --blue-80: #1f5f7f;
+   --blue-90: #214f69;
+   --blue-100: #204259;
+   --blue-110: #102b3c;
+
+   /*
+   * @tokens Colours: Brand
+   * @presenter Color
+   */
+   --brand-5: #f1f3ff;
+   --brand-10: #dee0f4;
+   --brand-20: #afb4e6;
+   --brand-30: #7c81d4;
+   --brand-40: #5e5ec8;
+   --brand-50: #433ea5;
+   --brand-60: #363284;
+   --brand-70: #2a276b;
+   --brand-80: #15133d;
+   --brand-90: #040415;
+
+   /*
+   * @tokens Colours: Red
+   * @presenter Color
+   */
+   --red-10: #fef2f2;
+   --red-20: #fee2e2;
+   --red-30: #fecaca;
+   --red-40: #fca5a5;
+   --red-50: #f87171;
+   --red-60: #ef4444;
+   --red-70: #dc2626;
+   --red-80: #b91c1c;
+   --red-90: #991b1b;
+   --red-100: #7f1d1d;
+   --red-110: #450a0a;
+
+   /*
+   * @tokens Colours: Yellow
+   * @presenter Color
+   */
+   --yellow-10: #fffbeb;
+   --yellow-20: #fef3c7;
+   --yellow-30: #fde68a;
+   --yellow-40: #fcd34d;
+   --yellow-50: #fbbf24;
+   --yellow-60: #f59e0b;
+   --yellow-70: #d97706;
+   --yellow-80: #b45309;
+   --yellow-90: #92400e;
+   --yellow-100: #78350f;
+   --yellow-110: #451a03;
+
+   /*
+   * @tokens Colours: Green
+   * @presenter Color
+   */
+   --green-10: #eaffd9;
+   --green-20: #cae8c7;
+   --green-30: #aad1b4;
+   --green-40: #8ab9a2;
+   --green-50: #6aa28f;
+   --green-60: #4a8b7d;
+   --green-70: #2a746b;
+   --green-80: #0a5c58;
+   --green-90: #063d3a;
+   --green-100: #031e1d;
+
+   /*
+   * @tokens Colours: Purple
+   * @presenter Color
+   */
+   --purple-10: #f0dfff;
+   --purple-20: #d6c0e9;
+   --purple-30: #bca0d3;
+   --purple-40: #a381be;
+   --purple-50: #8962a8;
+   --purple-60: #6f4292;
+   --purple-70: #55237c;
+   --purple-80: #441c63;
+   --purple-90: #32154a;
+   --purple-100: #220e32;
+
+   /*
+   * @tokens Colours: Sand
+   * @presenter Color
+   */
+   --sand-10: #fff2d9;
+   --sand-20: #e5d3b8;
+   --sand-30: #ccb397;
+   --sand-40: #b29477;
+   --sand-50: #987556;
+   --sand-60: #7f5535;
+   --sand-70: #653614;
+   --sand-80: #512b10;
+   --sand-90: #3d200c;
+   --sand-100: #281608;
+
+   /*
+   * @tokens Colours: Pink
+   * @presenter Color
+   */
+   --pink-10: #ffedf6;
+   --pink-20: #e3cbd9;
+   --pink-30: #c6a9bb;
+   --pink-40: #aa889e;
+   --pink-50: #8d6681;
+   --pink-60: #714463;
+   --pink-70: #542246;
+   --pink-80: #431b38;
+   --pink-90: #32142a;
+   --pink-100: #220e1c;
+
+   /*
+   * @tokens Colours: Tan
+   * @presenter Color
+   */
+   --tan-10: #f4e9e3;
+   --tan-20: #d9cec7;
+   --tan-30: #beb2ab;
+   --tan-40: #a39790;
+   --tan-50: #887b74;
+   --tan-60: #6d6058;
+   --tan-70: #52443c;
+   --tan-80: #423630;
+   --tan-90: #312924;
+   --tan-100: #211b18;
+}

@@ -1,0 +1,30 @@
+/*
+* @tokens Breakpoints
+*/
+
+$breakpoint-xsmall: 320px;
+$breakpoint-small: 544px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1280px;
+$breakpoint-xxlarge: 1400px;
+
+@mixin above($breakpoint) {
+   @media (min-width: $breakpoint) {
+      @content;
+   }
+}
+
+// don't forget about container-type: inline-size; on one of the parent elements
+@mixin above-container($breakpoint, $container-name: null) {
+   @if $container-name {
+      // stylelint-disable-next-line at-rule-prelude-no-invalid
+      @container #{$container-name} (min-width: #{$breakpoint}) {
+         @content;
+      }
+   } @else {
+      @container (min-width: #{$breakpoint}) {
+         @content;
+      }
+   }
+}

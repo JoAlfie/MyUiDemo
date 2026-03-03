@@ -1,0 +1,163 @@
+@forward "../../../ui/Buttons/styles/buttons";
+@use "rich-text-blockquote";
+
+.rich-text {
+   @include rich-text-blockquote.styles;
+
+   font-size: var(--size-text-base);
+   line-height: 1.625;
+
+   h2,
+   h3 {
+      margin-block-end: var(--size-base-20);
+   }
+
+   h2 {
+      font-size: var(--size-heading-2);
+   }
+
+   h3 {
+      font-size: var(--size-heading-3);
+   }
+
+   p {
+      margin-block-end: var(--size-base-26);
+   }
+
+   strong {
+      font-weight: var(--weight-bold);
+   }
+
+   a {
+      &:not(.rich-text-btn) {
+         color: var(--colour-brand-default);
+      }
+
+      &.rich-text-btn {
+         padding: var(--size-base-4) var(--size-base-12);
+         margin-top: var(--size-base-10);
+         text-decoration: none;
+         border-radius: var(--border-radius-full);
+      }
+   }
+
+   ul,
+   ol {
+      padding-inline-start: 0;
+      margin-block-end: var(--size-base-16);
+      margin-inline-start: var(--size-base-16);
+
+      ul:last-child,
+      ol:last-child {
+         margin-block-end: var(--size-base-16);
+      }
+   }
+
+   ul {
+      list-style: none;
+
+      > li {
+         position: relative;
+         margin-inline-start: var(--size-base-24);
+
+         p {
+            display: inline-block;
+         }
+      }
+
+      > li::before {
+         position: absolute;
+         inset-block-start: var(--size-base-10);
+         inset-inline-start: calc(-1 * var(--size-base-16));
+         display: inline-block;
+         flex-shrink: 0;
+         width: var(--size-base-6);
+         height: var(--size-base-6);
+         margin-inline-end: var(--size-base-8);
+         content: "";
+         background-color: currentcolor;
+         border-radius: var(--border-radius-full);
+      }
+   }
+
+   ol {
+      margin-inline-start: var(--size-base-16);
+      list-style: decimal;
+      counter-reset: item;
+
+      > li {
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         padding: 0;
+         margin-inline-start: var(--size-base-24);
+
+         &::before {
+            position: absolute;
+            inset-inline-start: calc(-1 * var(--size-base-24));
+            color: currentcolor;
+            content: counter(item) ".";
+            counter-increment: item;
+         }
+      }
+   }
+
+   table {
+      inline-size: 100%;
+      margin: 0;
+      overflow: hidden;
+      table-layout: fixed;
+      border-collapse: collapse;
+
+      td,
+      th {
+         position: relative;
+         box-sizing: border-box;
+         min-inline-size: 1em;
+         padding: var(--size-base-10) var(--size-base-4);
+         vertical-align: top;
+         text-align: start;
+         border-block-end: var(--border-width-base) solid var(--colour-border-accent);
+
+         > * {
+            margin-block-end: 0;
+         }
+      }
+
+      th p {
+         font-weight: var(--weight-bold);
+      }
+   }
+
+   hr {
+      margin: var(--size-base-48) 0;
+      border: 0.5px solid var(--colour-border-accent);
+   }
+
+   .rich-text-spacer {
+      display: block;
+      width: 100%;
+      height: calc(var(--spacing-section) * 2);
+   }
+
+   pre {
+      padding: var(--size-base-12);
+      margin-block-end: var(--size-base-16);
+      font-size: var(--size-text-small);
+      line-height: 1;
+   }
+
+   pre,
+   code {
+      background-color: var(--colour-background-accent);
+   }
+
+   :last-child {
+      margin-block-end: 0;
+   }
+
+   // Spacing for accordions within rich text
+   .collapsible-section {
+      margin: var(--size-base-16) 0;
+   }
+}

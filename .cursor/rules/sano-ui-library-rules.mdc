@@ -1,0 +1,96 @@
+---
+description: How cursor should behave for the Sano UI library
+globs: 
+alwaysApply: true
+---
+# Cursor Rules for Vue UI Library Development
+
+## 1. Code Structure
+- The `<template>` section **must always** come before the `<script>` section in Vue components.
+- Use **single-file components (SFCs)** for Vue components, ensuring proper separation of concerns.
+
+## 2. Best Practices for Vue 3 & TypeScript
+- Always use **Composition API** (`setup()`) instead of Options API.
+- Define **props with TypeScript interfaces** for strict type safety.
+- Use `defineProps` and `defineEmits` instead of `props` and `emit` from the setup function.
+- Avoid `any` type; prefer **explicit types** for props, events, and function parameters.
+- Always use `defineOptions({ name: "ComponentName" })` for component naming.
+- Use named functions over arrow functions.
+
+## 3. Handling Text & Translations
+- **Never hardcode human-readable text inside components**.
+- All text content **must be provided via `props` or `slots`** to allow translation in other projects.
+- Default props for text values should be **empty strings (`""`)** or **undefined**, never hardcoded text.
+
+## 4. Styling & Structure
+- Styling for components **must rely on custom SCSS**.
+- Always use `<style scoped lang="scss"></style>` inside Vue components.
+- Refer to the following file for guidance on writing custom SCSS:
+  - **`src/assets/design-system-stories/approach.mdx`**
+- Use SCSS variables from the following directory:
+  - **`src/assets/styles`**
+- **Never use inline styles** unless absolutely necessary.
+- Prefer `class` bindings (`:class="{ active: isActive }"`) over direct `style` bindings.
+
+## 5. Code Conciseness
+- Avoid unnecessary comments; **comments should explain "why," not "what"**.
+- **No unused imports or variables**; enforce via ESLint.
+- Always use **script setup** syntax to keep the code concise.
+
+## 6. Events & Reusability
+- Emit events instead of modifying parent data directly.
+- Prefer `v-model` for two-way bindings where applicable.
+
+## 7. Component and story consistency
+- When refactoring elements of a component also update the appropriate values for that components stories.
+
+## 8. Testing
+- Prefer using 'data-test' attribute for targeting elements over classes. Add to the component if required.
+- We a helper you can use to target elements by 'data-test': wrapper.findby("trigger-btn")
+- When refactoring to fix a failing test, do not refactor the component. Adapt the test to match component behavior or check its behavior is valid first.
+
+
+---
+
+## Example of a Well-Formatted Component
+```vue
+<template>
+  <button :class="['btn', variant]" @click="handleClick">
+    <slot />
+  </button>
+</template>
+
+<script setup lang="ts">
+defineOptions({ name: "MyButton" });
+
+interface Props {
+  variant?: "primary" | "secondary";
+}
+
+const props = defineProps<Props>();
+const emit = defineEmits<{
+  (event: "click"): void;
+}>();
+
+function handleClick() {
+  emit("click");
+};
+</script>
+
+<style scoped lang="scss">
+.btn {
+   padding: var(--size-base-8) var(--size-base-16);
+   font-size: var(--size-text-base);
+   background-color: var(--gray-10);
+   border-radius: var(--border-radius-8);
+
+   .primary {
+      background-color: var(--primary-color);
+   }
+
+   .secondary {
+      color: var(--purple-80);
+      background-color: var(--purple-20);
+   }
+}
+</style>

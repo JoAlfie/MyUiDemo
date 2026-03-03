@@ -1,0 +1,74 @@
+@use "sass:map";
+@use "../theme-mixins.scss" as theme;
+
+@mixin styles {
+   blockquote {
+      padding: var(--size-base-36) var(--size-base-32);
+      margin: var(--size-base-20) 0;
+      font-size: var(--size-heading-3);
+      color: var(--grey-90);
+      background-color: var(--grey-10);
+      border-radius: var(--border-radius-8);
+
+      // Remove margins from first/last children
+      > *:first-child {
+         padding-top: 0;
+         margin-top: 0;
+      }
+
+      > *:last-child {
+         padding-bottom: 0;
+         margin-bottom: 0;
+      }
+
+      > ul {
+         margin-bottom: var(--size-base-12);
+      }
+
+      li:last-child p {
+         margin-bottom: 0;
+      }
+
+      p:last-child {
+         margin-bottom: 0;
+      }
+
+      // Default link & button styles
+      a {
+         color: var(--grey-90);
+
+         &.rich-text-btn {
+            color: var(--grey-10);
+            background-color: var(--grey-90);
+
+            &:hover {
+               background-color: var(--grey-80);
+            }
+         }
+      }
+
+      hr {
+         margin: var(--size-base-28) 0;
+         border-color: var(--grey-40);
+      }
+
+      // Handle accordions nested within blockquotes
+      .collapsible-section {
+         padding: 0;
+         margin: var(--size-base-6) calc(-1 * var(--size-base-8));
+
+         .collapsible-section-toggle {
+            padding: var(--size-base-16) var(--size-base-8);
+         }
+
+         .collapsible-section-content {
+            .collapsible-section-content-inner {
+               padding: 0 var(--size-base-8) var(--size-base-24) var(--size-base-8);
+            }
+         }
+      }
+
+      // Generate theme variants using the shared mixin
+      @include theme.generate-theme-styles("&");
+   }
+}

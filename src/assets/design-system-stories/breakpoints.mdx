@@ -1,0 +1,22 @@
+import { Meta } from "@storybook/blocks";
+import { DesignTokenDocBlock } from "storybook-design-token";
+
+<Meta title="Design System/Breakpoints" />
+
+# Breakpoints
+
+Breakpoints are used for mobile-first responsive design. As CSS variables can't be used in media queries, we use SCSS variables.
+
+<DesignTokenDocBlock categoryName="Breakpoints" showSearch={false} />
+
+## Usage
+
+Use breakpoints in the custom media query mixin:
+
+```css
+@use "@/assets/scss/breakpoints";
+
+@include above(breakpoints.$breakpoint) {
+   ...
+}
+```

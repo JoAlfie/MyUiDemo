@@ -1,0 +1,244 @@
+@use "sass:map";
+
+// Theme variant definitions for components (e.g. blockquote, accordion, page sections, etc.)
+$theme-variants: (
+   "neutral": (
+      light: (
+         color: var(--tan-80),
+         bg: var(--grey-10),
+         btn-bg: var(--brand-50),
+         btn-hover: var(--brand-60),
+         hr: var(--tan-30),
+      ),
+      dark: (
+         color: var(--grey-10),
+         bg: var(--black),
+         btn-bg: var(--grey-10),
+         btn-hover: var(--grey-20),
+         hr: var(--grey-70),
+      ),
+   ),
+   "brand": (
+      light: (
+         color: var(--brand-80),
+         bg: var(--brand-5),
+         btn-bg: var(--brand-80),
+         btn-hover: var(--brand-70),
+         hr: var(--brand-20),
+      ),
+      dark: (
+         color: var(--brand-5),
+         bg: var(--brand-60),
+         btn-bg: var(--brand-5),
+         btn-hover: var(--brand-10),
+         hr: var(--brand-40),
+      ),
+   ),
+   "blue": (
+      light: (
+         color: var(--blue-90),
+         bg: var(--blue-10),
+         btn-bg: var(--blue-90),
+         btn-hover: var(--blue-80),
+         hr: var(--blue-40),
+      ),
+      dark: (
+         color: var(--blue-10),
+         bg: var(--blue-90),
+         btn-bg: var(--blue-10),
+         btn-hover: var(--blue-20),
+         hr: var(--blue-70),
+      ),
+   ),
+   "red": (
+      light: (
+         color: var(--red-90),
+         bg: var(--red-20),
+         btn-bg: var(--red-90),
+         btn-hover: var(--red-80),
+         hr: var(--red-40),
+      ),
+      dark: (
+         color: var(--red-10),
+         bg: var(--red-90),
+         btn-bg: var(--red-10),
+         btn-hover: var(--red-20),
+         hr: var(--red-70),
+      ),
+   ),
+   "yellow": (
+      light: (
+         color: var(--yellow-110),
+         bg: var(--yellow-10),
+         btn-bg: var(--yellow-110),
+         btn-hover: var(--yellow-100),
+         hr: var(--sand-20),
+      ),
+      dark: (
+         color: var(--yellow-10),
+         bg: var(--yellow-70),
+         btn-bg: var(--yellow-10),
+         btn-hover: var(--yellow-20),
+         hr: var(--yellow-60),
+      ),
+   ),
+   "green": (
+      light: (
+         color: var(--green-90),
+         bg: var(--green-10),
+         btn-bg: var(--green-90),
+         btn-hover: var(--green-80),
+         hr: var(--green-40),
+      ),
+      dark: (
+         color: var(--green-10),
+         bg: var(--green-90),
+         btn-bg: var(--green-10),
+         btn-hover: var(--green-20),
+         hr: var(--green-60),
+      ),
+   ),
+   "purple": (
+      light: (
+         color: var(--purple-80),
+         bg: var(--purple-10),
+         btn-bg: var(--purple-80),
+         btn-hover: var(--purple-70),
+         hr: var(--purple-30),
+      ),
+      dark: (
+         color: var(--purple-10),
+         bg: var(--purple-80),
+         btn-bg: var(--purple-10),
+         btn-hover: var(--purple-20),
+         hr: var(--purple-60),
+      ),
+   ),
+   "sand": (
+      light: (
+         color: var(--sand-90),
+         bg: var(--sand-10),
+         btn-bg: var(--sand-90),
+         btn-hover: var(--sand-70),
+         hr: var(--sand-30),
+      ),
+      dark: (
+         color: var(--sand-10),
+         bg: var(--sand-80),
+         btn-bg: var(--sand-10),
+         btn-hover: var(--sand-20),
+         hr: var(--sand-60),
+      ),
+   ),
+   "pink": (
+      light: (
+         color: var(--pink-80),
+         bg: var(--pink-10),
+         btn-bg: var(--pink-80),
+         btn-hover: var(--pink-70),
+         hr: var(--pink-30),
+      ),
+      dark: (
+         color: var(--pink-10),
+         bg: var(--pink-70),
+         btn-bg: var(--pink-10),
+         btn-hover: var(--pink-20),
+         hr: var(--pink-60),
+      ),
+   ),
+   "tan": (
+      light: (
+         color: var(--tan-80),
+         bg: var(--tan-10),
+         btn-bg: var(--tan-80),
+         btn-hover: var(--tan-70),
+         hr: var(--tan-30),
+      ),
+      dark: (
+         color: var(--tan-10),
+         bg: var(--tan-60),
+         btn-bg: var(--tan-10),
+         btn-hover: var(--tan-20),
+         hr: var(--tan-50),
+      ),
+   ),
+);
+
+// Helper mixin for link and button styles
+@mixin theme-link-and-button-styles($theme) {
+   color: map.get($theme, "color");
+
+   &.rich-text-btn {
+      color: map.get($theme, "bg");
+      background-color: map.get($theme, "btn-bg");
+
+      &:hover {
+         background-color: map.get($theme, "btn-hover");
+      }
+   }
+}
+
+@mixin theme-background-styles($theme) {
+   background-color: map.get($theme, "bg");
+}
+
+// Helper mixin to apply theme variant styles to an element
+@mixin apply-theme-variant-styles($theme) {
+   // Set CSS custom properties for extraction
+   --color: #{map.get($theme, "color")};
+   --bg: #{map.get($theme, "bg")};
+   --btn-bg: #{map.get($theme, "btn-bg")};
+   --btn-hover: #{map.get($theme, "btn-hover")};
+   --hr: #{map.get($theme, "hr")};
+
+   color: map.get($theme, "color");
+
+   @include theme-background-styles($theme);
+
+   // Regular selectors for direct children
+   a {
+      @include theme-link-and-button-styles($theme);
+   }
+
+   hr {
+      border-color: map.get($theme, "hr");
+   }
+
+   // Deep selectors for nested content (Vue components, etc.)
+   /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+   :deep(a) {
+      @include theme-link-and-button-styles($theme);
+   }
+
+   /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+   :deep(hr) {
+      border-color: map.get($theme, "hr");
+   }
+
+   // Cover nested collapsible sections in themed components to match parent element theme
+   .collapsible-section,
+   .rich-text-accordion {
+      @include theme-background-styles($theme);
+
+      color: map.get($theme, "color");
+   }
+}
+
+// Mixin to generate all theme styles for an element
+@mixin generate-theme-styles($selector: "") {
+   // Generate light mode theme variants
+   @each $variant, $modes in $theme-variants {
+      #{$selector}[data-theme="#{$variant}"] {
+         @include apply-theme-variant-styles(map.get($modes, "light"));
+      }
+   }
+
+   // Generate dark mode theme variants
+   &.dark {
+      @each $variant, $modes in $theme-variants {
+         #{$selector}[data-theme="#{$variant}"] {
+            @include apply-theme-variant-styles(map.get($modes, "dark"));
+         }
+      }
+   }
+}

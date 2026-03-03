@@ -1,0 +1,19 @@
+@forward "./mixins";
+@forward "./breakpoints";
+@forward "./colours";
+@forward "./sizing";
+@forward "./tokens";
+@forward "./tokens-colours";
+@forward "./helpers";
+@forward "./form";
+@forward "./table";
+@forward "./pill";
+@forward "./container";
+
+body {
+   font-family: var(--base-font-family);
+
+   &[class*="dialog-"] {
+      overflow: hidden;
+   }
+}

@@ -1,0 +1,54 @@
+/* Styling specifically for the UI library & Storybook */
+
+/* Not to be imported into other apps */
+
+@use "lib-base-fonts";
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   font-weight: normal;
+}
+
+body {
+   min-height: 100vh;
+   font-family: var(--base-font-family);
+   font-size: var(--size-text-base);
+   line-height: 1.6;
+   color: var(--colour-text-base);
+   background-color: var(--colour-background-accent);
+   text-rendering: optimizelegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+   font-family: var(--header-font-family);
+}
+
+h1 {
+   font-size: var(--size-heading-1);
+   font-weight: var(--weight-base);
+}
+
+h2 {
+   font-size: var(--size-heading-2);
+   font-weight: var(--weight-bold);
+}
+
+p {
+   margin-bottom: 1rem;
+
+   &:last-child {
+      margin-bottom: 0;
+   }
+}
+
+a,
+a:visited {
+   color: inherit;
+}

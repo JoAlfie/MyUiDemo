@@ -1,0 +1,91 @@
+@use "../../../assets/styles/breakpoints" as *;
+
+.button {
+   // small is no class
+
+   gap: var(--component-button-gap);
+   min-height: var(--component-button-min-height);
+   padding: var(--component-button-padding);
+   border-radius: var(--component-button-radius);
+
+   &.medium {
+      gap: var(--component-button-md-gap);
+      min-height: var(--component-button-md-min-height);
+      padding: var(--component-button-md-padding);
+      font-size: var(--component-button-md-text);
+      border-radius: var(--component-button-md-radius);
+   }
+
+   &.large {
+      gap: var(--component-button-lg-gap);
+      min-height: var(--component-button-lg-min-height);
+      padding: var(--component-button-lg-padding);
+      font-size: var(--component-button-lg-text);
+      border-radius: var(--component-button-lg-radius);
+   }
+
+   // These classes are small buttons until medium breakpoint
+   &.medium-md {
+      @include above($breakpoint-medium) {
+         padding: var(--component-button-md-padding);
+         font-size: var(--component-button-md-text);
+      }
+   }
+
+   &.large-md {
+      @include above($breakpoint-medium) {
+         padding: var(--component-button-lg-padding);
+         font-size: var(--component-button-lg-text);
+      }
+   }
+
+   // icon option
+   &.icon-only {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--component-button-min-height);
+      height: var(--component-button-min-height);
+      padding: 0;
+
+      &.medium {
+         width: var(--component-button-md-min-height);
+         height: var(--component-button-md-min-height);
+         padding: 0;
+      }
+
+      &.large {
+         width: var(--component-button-lg-min-height);
+         height: var(--component-button-lg-min-height);
+         padding: 0;
+      }
+
+      &.medium-md {
+         @include above($breakpoint-medium) {
+            width: var(--component-button-md-min-height);
+            height: var(--component-button-md-min-height);
+            padding: 0;
+         }
+      }
+
+      &.large-md {
+         @include above($breakpoint-medium) {
+            width: var(--component-button-lg-min-height);
+            height: var(--component-button-lg-min-height);
+            padding: 0;
+         }
+      }
+   }
+
+   // rounded option
+   // border radius full overrides size-based border radius style
+   &.rounded {
+      border-radius: var(--border-radius-full);
+   }
+
+   // text button doesn't have height / width / padding etc set
+   &.text {
+      min-height: 0;
+      padding: 0;
+   }
+}
